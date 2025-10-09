@@ -1,2 +1,6 @@
 # PizzeriaWeb
-Progetto di gruppo Lavinia,Christian e Gabriele
+Progetto di gruppo Lavinia,Christian e Gabriele.
+Ogni sviluppatore deve aggiungere due portate nel proprio menù:
+-Sviluppatore a (Christian): assegnato al menù pizze
+-Sviluppatore b (Gabriele): assegnato al menù dolci
+-Sviluppatore C (Lavinia): assegnato al menù bevande
