@@ -1,267 +1,142 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzeria da Ciccio - Lavoro di Christian, Lavinia e Gabriele</title>
+    <title>Pizzeria da Ciccio</title>
     <link rel="shortcut icon" href="https://i.pinimg.com/originals/d0/a3/f7/d0a3f7bb48384a03d230e20826314ec2.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Pizzeria da Ciccio</h1>
-    <h3>Lavoro realizzato da Christian, Lavinia e Gabriele</h3>
+    <!-- HEADER + NAV -->
+    <header>
+        <div class="topbar">
+            <div class="lang-select">
+                <label for="lang">Lingua:</label>
+                <select id="lang" name="lang">
+                    <option value="it" selected>Italiano</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <div class="hours">
+                <p>🕐 Lun–Dom 12:00 - 23:30</p>
+            </div>
+        </div>
 
-    <div>
-        <menu>
-            <h2>Antipasti</h2>
-            <li>Bocconcini di maiale</li>
-            <li>Bruschette</li>
-            <li>Tramezzini</li>
-            <li>Torte salate</li>
-        </menu>
-    </div>
+        <nav class="navbar">
+            <h1>Pizzeria da Ciccio</h1>
+            <ul>
+                <li><a href="#home">🏠 Home</a></li>
+                <li><a href="#pizze">🍕 Pizze</a></li>
+                <li><a href="#dolci">🍰 Dolci</a></li>
+                <li><a href="#bibite">🥤 Bibite</a></li>
+                <li><a href="#recensioni">⭐ Recensioni</a></li>
+                <li><a href="#contatti">📞 Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div>
-        <menu>
-            <h2>Primi piatti</h2>
-            <li>Spaghetti alla carbonara</li>
-            <li>Spaghetti all'amatriciana</li>
-            <li>Pasta alla gricia</li>
-            <li>Spaghetti alle vongole</li>
-        </menu>
-    </div>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>La vera pizza napoletana dal 1980 🍕</h2>
+            <p>Ingredienti freschi, forno a legna, passione autentica.</p>
+            <a href="#pizze" class="btn-primary">Scopri il nostro menù</a>
+        </div>
+    </section>
 
-    <div>
-        <menu>
-            <h2>Secondi piatti</h2>
-            <li>Parmigiana di melanzane</li>
-            <li>Polpette al sugo</li>
-            <li>Pollo alle mandorle</li>
-            <li>Chili con carne</li>
-        </menu>
-    </div>
+    <!-- MENU CARDS -->
+    <section class="menu-cards">
+        <div class="card" id="pizze">
+            <img src="https://images.unsplash.com/photo-1601924582971-06c3d2c35c1d?auto=format&fit=crop&w=800&q=80" alt="Pizze">
+            <h3>Pizze</h3>
+            <p>Dalla classica Margherita alla Diavola piccante. Scopri tutte le nostre specialità.</p>
+            <a href="#pizze-section" class="btn-secondary">Vedi menu</a>
+        </div>
 
-    <div>
-        <menu>
-            <h2>Contorni</h2>
-            <li>Patate al forno</li>
-            <li>Melanzane a funghetto</li>
-            <li>Gateau di Patate</li>
-            <li>Caponata</li>
-        </menu>
-    </div>
+        <div class="card" id="dolci">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Dolci">
+            <h3>Dolci</h3>
+            <p>Delizie fatte in casa: tiramisù, caprese, babà e tanto altro.</p>
+            <a href="#dolci-section" class="btn-secondary">Vedi menu</a>
+        </div>
 
-    <div>
-        <menu>
-            <h2>Dolci</h2>
-            <li>Torta tenerina</li>
-            <li>Tiramisù</li>
-            <li>Crepe dolci e salate</li>
-            <li>Pancake allo sciroppo d'acero</li>
-        </menu>
-    </div>
+        <div class="card" id="bibite">
+            <img src="https://images.unsplash.com/photo-1564758565488-047f2b3b3ae8?auto=format&fit=crop&w=800&q=80" alt="Bibite">
+            <h3>Bibite</h3>
+            <p>Birre artigianali, vini locali e bevande fresche per accompagnare ogni piatto.</p>
+            <a href="#bibite-section" class="btn-secondary">Vedi menu</a>
+        </div>
+    </section>
 
-    <hr>
+    <!-- SEZIONE MENU -->
+    <section id="pizze-section" class="menu-section">
+        <h2>🍕 Le nostre pizze</h2>
+        <ul>
+            <li><strong>Margherita</strong> — Pomodoro, mozzarella, basilico</li>
+            <li><strong>Diavola</strong> — Pomodoro, mozzarella, salame piccante</li>
+            <li><strong>Capricciosa</strong> — Prosciutto, carciofi, olive, funghi</li>
+            <li><strong>Bufalina</strong> — Pomodoro, mozzarella di bufala</li>
+        </ul>
+    </section>
 
-    <h2>Recensioni dei clienti</h2>
-    <section>
+    <section id="dolci-section" class="menu-section">
+        <h2>🍰 I nostri dolci</h2>
+        <ul>
+            <li><strong>Tiramisù</strong> — Classico con savoiardi e mascarpone</li>
+            <li><strong>Torta Caprese</strong> — Cioccolato e mandorle</li>
+            <li><strong>Babà</strong> — Con bagna al rum</li>
+        </ul>
+    </section>
+
+    <section id="bibite-section" class="menu-section">
+        <h2>🥤 Le nostre bibite</h2>
+        <ul>
+            <li>Acqua naturale / frizzante</li>
+            <li>Birra artigianale 33cl</li>
+            <li>Vino rosso della casa</li>
+            <li>Limoncello fatto in casa</li>
+        </ul>
+    </section>
+
+    <!-- RECENSIONI -->
+    <section id="recensioni" class="reviews">
+        <h2>⭐ Recensioni dei clienti</h2>
         <article>
-            <h2>Mario Rossi</h2>
-            <p>Cibo fantastico, ci ritornerò.</p>
-            <p>&#9733;&#9733;&#9733;</p>
+            <h3>Mario Rossi</h3>
+            <p>“Pizza fantastica, servizio veloce e gentile!”</p>
+            <p class="stars">★★★★★</p>
         </article>
-
         <article>
-            <h2>Ciro Esposito</h2>
-            <p>Staff professionale e prezzi accessibili.</p>
-            <p>&#9733;&#9733;&#9733;&#9733;</p>
-        </article>
-
-        <article>
-            <h2>Gennaro Italia</h2>
-            <p>Un primo piatto ottimo.</p>
-            <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <h3>Lucia Bianchi</h3>
+            <p>“Locale accogliente, dolci buonissimi.”</p>
+            <p class="stars">★★★★☆</p>
         </article>
     </section>
 
-    <h3>Contattaci</h3>
-    <form action="" method="post">
-        <div>
+    <!-- CONTATTI -->
+    <section id="contatti" class="contact">
+        <h2>📞 Contattaci</h2>
+        <form>
             <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <br>
-        <div>
-            <label for="surname">Cognome:</label>
-            <input type="text" id="surname" name="surname" required>
-        </div>
-        <br>
-        <div>
+            <input type="text" id="name" required>
+
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                required>
-        </div>
-        <br>
-        <div>
-            <label for="phone">Numero di Telefono:</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]+" inputmode="numeric" required>
-        </div>
-        <br>
-        <div>
-            <label for="message">Note:</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <br>
-        <div>
-            <button type="reset">Reset</button>
-        </div>
-        <div>
+            <input type="email" id="email" required>
+
+            <label for="message">Messaggio:</label>
+            <textarea id="message" required></textarea>
+
             <button type="submit">Invia</button>
-        </div>
-    </form>
-
-    <footer>
-        <p>Contatti: <a href="mailto:pizzeriadaciccio@gmail.com">pizzeriadaciccio@gmail.com</a></p>
-        <p>Lavoro realizzato da Christian, Lavinia e Gabriele</p>
-    </footer>
-</body>
-</html>
-
-<!-- ricordati sempre di committare e pushare ad ogni modifica -->
-
-=======
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzeria da Ciccio - Lavoro di Christian, Lavinia e Gabriele</title>
-    <link rel="shortcut icon" href="https://i.pinimg.com/originals/d0/a3/f7/d0a3f7bb48384a03d230e20826314ec2.jpg" type="image/x-icon">
-</head>
-
-<body>
-    <h1>Pizzeria da Ciccio</h1>
-    <h3>Lavoro realizzato da Christian, Lavinia e Gabriele</h3>
-
-    <div>
-        <menu>
-            <h2>Antipasti</h2>
-            <li>Bocconcini di maiale</li>
-            <li>Bruschette</li>
-            <li>Tramezzini</li>
-            <li>Torte salate</li>
-        </menu>
-    </div>
-
-    <div>
-        <menu>
-            <h2>Primi piatti</h2>
-            <li>Spaghetti alla carbonara</li>
-            <li>Spaghetti all'amatriciana</li>
-            <li>Pasta alla gricia</li>
-            <li>Spaghetti alle vongole</li>
-        </menu>
-    </div>
-
-    <div>
-        <menu>
-            <h2>Secondi piatti</h2>
-            <li>Parmigiana di melanzane</li>
-            <li>Polpette al sugo</li>
-            <li>Pollo alle mandorle</li>
-            <li>Chili con carne</li>
-        </menu>
-    </div>
-
-    <div>
-        <menu>
-            <h2>Contorni</h2>
-            <li>Patate al forno</li>
-            <li>Melanzane a funghetto</li>
-            <li>Gateau di Patate</li>
-            <li>Caponata</li>
-        </menu>
-    </div>
-
-    <div>
-        <menu>
-            <h2>Dolci</h2>
-            <li>Torta tenerina</li>
-            <li>Tiramisù</li>
-            <li>Crepe dolci e salate</li>
-            <li>Pancake allo sciroppo d'acero</li>
-        </menu>
-    </div>
-
-    <hr>
-
-    <h2>Recensioni dei clienti</h2>
-    <section>
-        <article>
-            <h2>Mario Rossi</h2>
-            <p>Cibo fantastico, ci ritornerò.</p>
-            <p>&#9733;&#9733;&#9733;</p>
-        </article>
-
-        <article>
-            <h2>Ciro Esposito</h2>
-            <p>Staff professionale e prezzi accessibili.</p>
-            <p>&#9733;&#9733;&#9733;&#9733;</p>
-        </article>
-
-        <article>
-            <h2>Gennaro Italia</h2>
-            <p>Un primo piatto ottimo.</p>
-            <p>&#9733;&#9733;&#9733;&#9733;&#9733;</p>
-        </article>
+        </form>
     </section>
 
-    <h3>Contattaci</h3>
-    <form action="" method="post">
-        <div>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        <br>
-        <div>
-            <label for="surname">Cognome:</label>
-            <input type="text" id="surname" name="surname" required>
-        </div>
-        <br>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                required>
-        </div>
-        <br>
-        <div>
-            <label for="phone">Numero di Telefono:</label>
-            <input type="tel" id="phone" name="phone" pattern="[0-9]+" inputmode="numeric" required>
-        </div>
-        <br>
-        <div>
-            <label for="message">Note:</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        <br>
-        <div>
-            <button type="reset">Reset</button>
-        </div>
-        <div>
-            <button type="submit">Invia</button>
-        </div>
-    </form>
-
+    <!-- FOOTER -->
     <footer>
-        <p>Contatti: <a href="mailto:pizzeriadaciccio@gmail.com">pizzeriadaciccio@gmail.com</a></p>
-        <p>Lavoro realizzato da Christian, Lavinia e Gabriele</p>
+        <p>📍 Via Napoli 123, Roma — Tel: 06 1234567</p>
+        <p>© 2025 Pizzeria da Ciccio | <a href="mailto:pizzeriadaciccio@gmail.com">pizzeriadaciccio@gmail.com</a></p>
     </footer>
 </body>
 </html>
-
-<!-- ricordati sempre di committare e pushare ad ogni modifica -->
-
->>>>>>> 49539f09f3c5482358d2e1a1dc7e9a914ad4970d
