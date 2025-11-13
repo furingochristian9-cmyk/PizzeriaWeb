@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria da Ciccio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://i.pinimg.com/originals/d0/a3/f7/d0a3f7bb48384a03d230e20826314ec2.jpg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>🍕 Pizzeria da Ciccio</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pizze.html">Pizze</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h2>La Vera Pizza Napoletana dal 1980</h2>
+        <p>Forno a legna, ingredienti genuini e passione autentica ❤️</p>
+        <div class="hero-buttons">
+          <a href="pizze.html" class="btn-primary">Scopri il menù</a>
+          <a href="#contatti" class="btn-secondary">Prenota ora</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-preview">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601924582971-06c3d2c35c1d?auto=format&fit=crop&w=1200&q=80" alt="Pizze">
+      <h3>Le Nostre Pizze</h3>
+      <p>Dalla classica Margherita alla gustosa Diavola, un'esplosione di sapori italiani.</p>
+      <a href="pizze.html">Vedi tutte</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1624351516667-04d206ad2f3d?auto=format&fit=crop&w=1200&q=80" alt="Dolci">
+      <h3>Dolci Fatti in Casa</h3>
+      <p>Tiramisù, Caprese e Babà: la dolce conclusione perfetta per il tuo pasto.</p>
+      <a href="#">Scopri</a>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605379399843-5870eea9b74b?auto=format&fit=crop&w=1200&q=80" alt="Bibite">
+      <h3>Bevande</h3>
+      <p>Birre artigianali, vini locali e bibite fresche per ogni gusto.</p>
+      <a href="#">Scopri</a>
+    </div>
+  </section>
+
+  <section id="contatti" class="contact">
+    <h2>📞 Contatti e Prenotazioni</h2>
+    <form id="contact-form">
+      <label>Nome:</label>
+      <input type="text" required>
+      <label>Email:</label>
+      <input type="email" required>
+      <label>Messaggio / Prenotazione:</label>
+      <textarea required></textarea>
+      <button type="submit">Invia</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>📍 Via Napoli 123, Roma — Tel: 06 1234567</p>
+    <p>© 2025 Pizzeria da Ciccio | <a href="mailto:pizzeriadaciccio@gmail.com">pizzeriadaciccio@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Grazie! Ti risponderemo al più presto 🍕');
+      e.target.reset();
+    });
+  </script>
+
+</body>
+</html>
