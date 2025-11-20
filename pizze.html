@@ -5,72 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menù Pizze | Pizzeria da Ciccio</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header>
-    <h1>🍕 Il Nostro Menù</h1>
+    <h1>🍕 Menù Pizze</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="pizze.html" class="active">Pizze</a></li>
-        <li><a href="index.html#contatti">Contatti</a></li>
+        <li><a href="#contatti">Contatti</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="menu-list">
-    <div class="pizza-card">
-      <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80" alt="Pizza Margherita">
-      <div>
-        <h3>Margherita</h3>
-        <p>Pomodoro San Marzano, mozzarella fior di latte, basilico fresco.</p>
-        <span class="price">€7.00</span>
-      </div>
-    </div>
-
-    <div class="pizza-card">
-      <img src="https://images.unsplash.com/photo-1601924582971-06c3d2c35c1d?auto=format&fit=crop&w=800&q=80" alt="Pizza Diavola">
-      <div>
-        <h3>Diavola</h3>
-        <p>Pomodoro, mozzarella, salame piccante e olio al peperoncino.</p>
-        <span class="price">€8.50</span>
-      </div>
-    </div>
-
-    <div class="pizza-card">
-      <img src="https://images.unsplash.com/photo-1617196034796-73dfa3e9d84c?auto=format&fit=crop&w=800&q=80" alt="Pizza Capricciosa">
-      <div>
-        <h3>Capricciosa</h3>
-        <p>Pomodoro, mozzarella, prosciutto cotto, funghi, olive e carciofi.</p>
-        <span class="price">€9.00</span>
-      </div>
-    </div>
-
-    <div class="pizza-card">
-      <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=800&q=80" alt="Pizza Quattro Formaggi">
-      <div>
-        <h3>Quattro Formaggi</h3>
-        <p>Mozzarella, gorgonzola, fontina e parmigiano.</p>
-        <span class="price">€9.50</span>
-      </div>
-    </div>
-
-    <div class="pizza-card">
-      <img src="https://images.unsplash.com/photo-1603079847920-946b3a8cfd58?auto=format&fit=crop&w=800&q=80" alt="Pizza Vegetariana">
-      <div>
-        <h3>Vegetariana</h3>
-        <p>Pomodoro, mozzarella e verdure grigliate di stagione.</p>
-        <span class="price">€8.00</span>
-      </div>
-    </div>
+  <!-- RICERCA -->
+  <section class="search-bar">
+    <input type="text" id="searchInput" placeholder="🔍 Cerca la tua pizza preferita...">
   </section>
+
+  <!-- GRIGLIA PIZZE -->
+  <section class="menu-grid" id="pizzaContainer"></section>
+
+  <!-- POPUP ORDINE -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <button id="closePopup">✖</button>
+      <img id="popupImg" src="" alt="Pizza">
+      <h3 id="popupTitle"></h3>
+      <p id="popupDesc"></p>
+      <span id="popupPrice" class="price"></span>
+      <form id="orderForm">
+        <label>Quantità:</label>
+        <input type="number" id="quantity" value="1" min="1" required>
+        <label>Nome:</label>
+        <input type="text" id="name" placeholder="Il tuo nome" required>
+        <label>Telefono:</label>
+        <input type="tel" id="phone" placeholder="Il tuo numero" required>
+        <button type="submit" class="order-btn">Ordina ora</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CARRELLO -->
+  <div class="cart-summary" id="cartSummary">
+    Carrello: 0 pizze — Totale: €0.00
+  </div>
 
   <footer>
     <p>📍 Via Napoli 123, Roma — Tel: 06 1234567</p>
     <p>© 2025 Pizzeria da Ciccio</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
