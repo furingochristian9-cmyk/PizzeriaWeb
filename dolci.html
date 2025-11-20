@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dolci 🍰 | Pizzeria da Ciccio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Menù Dolci 🍰</h1>
+</header>
+
+<nav class="menu-nav">
+  <a href="index.html">Home</a>
+  <a href="pizze.html">Pizze</a>
+  <a href="bibite.html">Bevande</a>
+  <a href="dolci.html" class="active">Dolci</a>
+</nav>
+
+<section class="menu-container" id="menu"></section>
+
+<div id="cart">
+  <h3>🛒 Il tuo carrello</h3>
+  <div id="cart-items"></div>
+  <p><strong>Totale: <span id="total">0.00€</span></strong></p>
+  <button id="confirm-btn" onclick="confirmOrder()">Conferma Ordine</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+const img = {
+  "Tiramisù":"img/dolci.jpeg",
+  "Babà":"img/dolci.jpeg",
+  "Panna Cotta":"img/dolci.jpeg",
+  "Gelato":"img/dolci.jpeg"
+};
+
+const menuData = [
+  { categoria: "Dolci", items: [
+    {nome:"Tiramisù", prezzo:"4.00€"},
+    {nome:"Babà", prezzo:"3.50€"},
+    {nome:"Panna Cotta", prezzo:"3.00€"},
+    {nome:"Gelato", prezzo:"2.50€"}
+  ]}
+];
+
+const container = document.getElementById("menu");
+menuData.forEach(sezione=>{
+  sezione.items.forEach(item=>{
+    const card = document.createElement("div");
+    card.className = "card";
+    const imageURL = img[item.nome] || "";
+    card.innerHTML = `
+      <img src="${imageURL}" alt="${item.nome}">
+      <h2>${item.nome}</h2>
+      <ul>
+        <li>${item.prezzo} 
+          <button class="add-btn" onclick="addToCart('${item.nome}', '${item.prezzo}')">+</button>
+        </li>
+      </ul>
+    `;
+    container.appendChild(card);
+  });
+});
+</script>
+</body>
+</html>

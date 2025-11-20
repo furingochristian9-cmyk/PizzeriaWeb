@@ -1,78 +1,90 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizzeria da Ciccio 🍕</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizzeria da Ciccio 🍕</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <h1>Pizzeria da Ciccio 🍕</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="pizze.html">Menù Pizze</a></li>
-        <li><a href="#contatti">Contatti</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h2>La vera pizza napoletana dal 1980</h2>
-        <p>Forno a legna, ingredienti freschi e passione autentica!</p>
-        <div class="hero-buttons">
-          <a href="pizze.html" class="btn-primary">Scopri il Menù</a>
-          <a href="#contatti" class="btn-secondary">Prenota Ora</a>
-        </div>
+<!-- HEADER -->
+<header>
+  <h1>Pizzeria da Ciccio 🍕</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pizze.html">Menù Pizze</a></li>
+      <li><a href="dolci.html">Dolci</a></li>
+      <li><a href="bibite.html">Bevande</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h2>La vera pizza napoletana dal 1980</h2>
+      <p>Forno a legna, ingredienti freschi e passione autentica!</p>
+      <div class="hero-buttons">
+        <a href="pizze.html" class="btn-primary">Scopri il Menù</a>
+        <a href="#contatti" class="btn-secondary">Prenota Ora</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MENU PREVIEW -->
-  <section class="menu-preview">
-    <div class="card" onclick="location.href='pizze.html'">
-      <img src="img/pizza1.jpeg" alt="Pizze">
+<!-- SEZIONI MENU -->
+<section class="menu-grid">
+  <div class="pizza-card" onclick="location.href='pizze.html'">
+    <img src="img/pizza1.jpeg" alt="Pizze">
+    <div class="pizza-info">
       <h3>Pizze</h3>
-      <p>Dalla Margherita alla Diavola, tutte le nostre specialità.</p>
-      <a href="pizze.html">Vedi Menù</a>
+      <p>Margherita, Diavola e tante specialità.</p>
+      <span class="price">Vedi Menù</span>
     </div>
-    <div class="card" onclick="location.href='dolci.html'">
-      <img src="img/dolci.jpeg" alt="Dolci">
+  </div>
+
+  <div class="pizza-card" onclick="location.href='dolci.html'">
+    <img src="img/dolci.jpeg" alt="Dolci">
+    <div class="pizza-info">
       <h3>Dolci</h3>
-      <p>Tiramisù, Babà e tante altre delizie fatte in casa.</p>
-      <a href="dolci.html">Vedi Menù</a>
+      <p>Tiramisù, Babà e delizie fatte in casa.</p>
+      <span class="price">Vedi Menù</span>
     </div>
-    <div class="card" onclick="location.href='bibite.html'">
-      <img src="img/bibite.jpeg" alt="Bibite">
-      <h3>Bibite</h3>
-      <p>Vini locali, birre artigianali e bevande fresche.</p>
-      <a href="bibite.html">Vedi Menù</a>
+  </div>
+
+  <div class="pizza-card" onclick="location.href='bibite.html'">
+    <img src="img/bibite.jpeg" alt="Bevande">
+    <div class="pizza-info">
+      <h3>Bevande</h3>
+      <p>Vini, birre artigianali e bibite fresche.</p>
+      <span class="price">Vedi Menù</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTATTI -->
-  <section class="contact" id="contatti">
-    <h2>📞 Contattaci</h2>
-    <form id="contactForm">
-      <input type="text" placeholder="Il tuo nome" required>
-      <input type="email" placeholder="La tua email" required>
-      <textarea placeholder="Messaggio o prenotazione" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
-  </section>
+<!-- CONTATTI -->
+<section class="contact" id="contatti">
+  <h2>📞 Contattaci</h2>
+  <form id="contactForm">
+    <input type="text" placeholder="Il tuo nome" required>
+    <input type="email" placeholder="La tua email" required>
+    <textarea placeholder="Messaggio o prenotazione" required></textarea>
+    <button type="submit" class="btn-primary">Invia</button>
+  </form>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>📍 Via Napoli 123, Roma — Tel: 06 1234567</p>
-    <p>© 2025 Pizzeria da Ciccio | <a href="mailto:pizzeriadaciccio@gmail.com">pizzeriadaciccio@gmail.com</a></p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <p>📍 Via Napoli 123, Roma — Tel: 06 1234567</p>
+  <p>© 2025 Pizzeria da Ciccio | <a href="mailto:pizzeriadaciccio@gmail.com">pizzeriadaciccio@gmail.com</a></p>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
+

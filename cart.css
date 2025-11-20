@@ -1,0 +1,70 @@
+/* ===== CARRELLO ===== */
+#cart {
+  position: fixed;       /* rimane fisso durante lo scroll */
+  bottom: 20px;          /* distanza dal fondo */
+  right: 20px;           /* distanza dal lato destro */
+  width: 320px;          /* larghezza del carrello */
+  background: #fff;      /* sfondo bianco */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  border-radius: 14px;
+  padding: 20px;
+  z-index: 9999;         /* sopra tutti gli altri elementi */
+  display: none;         /* visibile solo quando ci sono articoli */
+}
+
+/* Titolo del carrello */
+#cart h3 {
+  margin-top: 0;
+  color: #d62828;
+  font-size: 1.2rem;
+}
+
+/* Lista articoli */
+#cart-items {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+/* Singolo articolo */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+/* Pulsante conferma ordine */
+#confirm-btn {
+  width: 100%;
+  background: #d62828;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#confirm-btn:hover {
+  background: #e74c3c;
+}
+
+/* ===== PULSANTI + PER aggiungere al carrello ===== */
+.add-btn {
+  background: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+  margin-left: 8px;
+}
+
+.add-btn:hover {
+  background: #21867a;
+}

@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menù Pizze | Pizzeria da Ciccio</title>
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="cart.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menù Pizze 🍕 | Pizzeria da Ciccio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>🍕 Menù Pizze</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pizze.html" class="active">Pizze</a></li>
-        <li><a href="#contatti">Contatti</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- RICERCA -->
-  <section class="search-bar">
-    <input type="text" id="searchInput" placeholder="🔍 Cerca la tua pizza preferita...">
-  </section>
+<!-- HEADER -->
+<header>
+  <h1>Pizzeria da Ciccio 🍕 - Menù Pizze</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pizze.html" class="active">Pizze</a></li>
+      <li><a href="bibite.html">Bevande</a></li>
+      <li><a href="dolci.html">Dolci</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- GRIGLIA PIZZE -->
-  <section class="menu-grid" id="pizzaContainer"></section>
-
-  <!-- POPUP ORDINE -->
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <button id="closePopup">✖</button>
-      <img id="popupImg" src="" alt="Pizza">
-      <h3 id="popupTitle"></h3>
-      <p id="popupDesc"></p>
-      <span id="popupPrice" class="price"></span>
-      <form id="orderForm">
-        <label>Quantità:</label>
-        <input type="number" id="quantity" value="1" min="1" required>
-        <label>Nome:</label>
-        <input type="text" id="name" placeholder="Il tuo nome" required>
-        <label>Telefono:</label>
-        <input type="tel" id="phone" placeholder="Il tuo numero" required>
-        <button type="submit" class="order-btn">Ordina ora</button>
-      </form>
+<!-- HERO/INTRO (opzionale) -->
+<section class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h2>Le nostre Pizze</h2>
+      <p>Ingredienti freschi, forno a legna e tanta passione!</p>
     </div>
   </div>
+</section>
 
-  <!-- CARRELLO -->
-  <div class="cart-summary" id="cartSummary">
-    Carrello: 0 pizze — Totale: €0.00
-  </div>
+<!-- MENU PIZZE -->
+<section class="menu-grid" id="menu"></section>
 
-  <footer>
-    <p>📍 Via Napoli 123, Roma — Tel: 06 1234567</p>
-    <p>© 2025 Pizzeria da Ciccio</p>
-  </footer>
+<!-- CARRELLO -->
+<div id="cart">
+  <h3>🛒 Il tuo carrello</h3>
+  <div id="cart-items"></div>
+  <p><strong>Totale: <span id="total">0.00€</span></strong></p>
+  <button id="confirm-btn" onclick="confirmOrder()">Conferma Ordine</button>
+</div>
 
-  <script src="script.js"></script>
+<!-- SCRIPT -->
+<script src="script.js"></script>
+<script>
+const img = {
+  "Margherita":"img/pizza1.jpeg",
+  "Diavola":"img/pizza2.jpeg",
+  "Capricciosa":"img/pizza3.jpeg",
+  "Quattro Formaggi":"img/pizza4.jpeg",
+  "Vegetariana":"img/pizza5.jpeg"
+};
+
+const menuData = [
+  { categoria: "Pizze", items: [
+    {nome:"Margherita", prezzo:"7.00€"},
+    {nome:"Diavola", prezzo:"8.50€"},
+    {nome:"Capricciosa", prezzo:"9.00€"},
+    {nome:"Quattro Formaggi", prezzo:"9.50€"},
+    {nome:"Vegetariana", prezzo:"8.00€"}
+  ]}
+];
+
+const container = document.getElementById("menu");
+menuData.forEach(sezione=>{
+  sezione.items.forEach(item=>{
+    const card = document.createElement("div");
+    card.className = "pizza-card";
+    const imageURL = img[item.nome] || "";
+    card.innerHTML = `
+      <img src="${imageURL}" alt="${item.nome}">
+      <div class="pizza-info">
+        <h3>${item.nome}</h3>
+        <p>Prezzo: <span class="price">${item.prezzo}</span></p>
+        <button class="add-btn" onclick="addToCart('${item.nome}','${item.prezzo}')">Aggiungi 🛒</button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+});
+</script>
+
 </body>
 </html>
