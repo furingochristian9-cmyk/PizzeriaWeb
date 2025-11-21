@@ -61,10 +61,10 @@ const img = {
 
 const menuData = [
   { categoria: "Dolci", items: [
-    {nome:"Tiramisù", prezzo:"4.00€"},
-    {nome:"Babà", prezzo:"3.50€"},
-    {nome:"Panna Cotta", prezzo:"3.00€"},
-    {nome:"Gelato Artigianale", prezzo:"3.00€"}
+    {nome:"Tiramisù", prezzo:"4.00€", ingredienti:"Mascarpone, Savoiardi, Caffè, Cacao"},
+    {nome:"Babà", prezzo:"3.50€", ingredienti:"Impasto dolce, Rum"},
+    {nome:"Panna Cotta", prezzo:"3.00€", ingredienti:"Panna, Zucchero, Vaniglia"},
+    {nome:"Gelato Artigianale", prezzo:"3.00€", ingredienti:"Latte, Zucchero, Varie creme"}
   ]}
 ];
 
@@ -72,7 +72,6 @@ const container = document.getElementById("menu");
 
 menuData.forEach(sezione => {
   sezione.items.forEach(item => {
-
     const card = document.createElement("div");
     card.className = "pizza-card";
 
@@ -82,17 +81,37 @@ menuData.forEach(sezione => {
       <img src="${imageURL}" alt="${item.nome}">
       <div class="pizza-info">
         <h3>${item.nome}</h3>
+        <div class="stars" data-rating="4">★★★★☆</div>
         <p>Prezzo: <span class="price">${item.prezzo}</span></p>
-
-        <button class="add-btn" onclick="addToCart('${item.nome}', '${item.prezzo}')">
-          Aggiungi 🛒
-        </button>
+        <button class="add-btn" onclick="addToCart('${item.nome}','${item.prezzo}'); event.stopPropagation();">Aggiungi 🛒</button>
+        <button class="info-btn" onclick="showInfo('${item.nome}','${item.ingredienti}'); event.stopPropagation();">ℹ️ Info</button>
       </div>
     `;
-
     container.appendChild(card);
   });
 });
+
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("stars")) {
+    let rating = e.target.getAttribute("data-rating");
+    rating = (Number(rating) % 5) + 1;
+    e.target.setAttribute("data-rating", rating);
+    e.target.textContent = "★★★★★".slice(0, rating) + "☆☆☆☆☆".slice(0, 5-rating);
+  }
+});
+
+function showInfo(nome, ingredienti) {
+  const modal = document.createElement("div");
+  modal.className = "info-modal";
+  modal.innerHTML = `
+    <div class="info-box">
+      <h2>${nome}</h2>
+      <p><strong>Ingredienti:</strong> ${ingredienti}</p>
+      <button onclick="this.parentElement.parentElement.remove()" class="close-btn">Chiudi</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+}
 </script>
 
 </body>

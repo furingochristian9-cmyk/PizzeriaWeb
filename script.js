@@ -33,3 +33,15 @@ function confirmOrder() {
   cart = [];
   updateCart();
 }
+
+function showIngredients(nome) {
+  document.getElementById("modal-title").innerText = nome;
+  document.getElementById("modal-ingredients").innerText = ingredienti[nome] || "Ingredienti non disponibili";
+
+  document.getElementById("modal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+

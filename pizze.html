@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<link rel="stylesheet" href="cart.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Menù Pizze 🍕 | Pizzeria da Ciccio</title>
+<link rel="stylesheet" href="cart.css">
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -23,7 +23,7 @@
   </nav>
 </header>
 
-<!-- HERO/INTRO (opzionale) -->
+<!-- HERO/INTRO -->
 <section class="hero">
   <div class="hero-overlay">
     <div class="hero-content">
@@ -44,7 +44,6 @@
   <button id="confirm-btn" onclick="confirmOrder()">Conferma Ordine</button>
 </div>
 
-<!-- SCRIPT -->
 <script src="script.js"></script>
 <script>
 const img = {
@@ -60,34 +59,60 @@ const img = {
 
 const menuData = [
   { categoria: "Pizze", items: [
-    {nome:"Margherita", prezzo:"7.00€"},
-    {nome:"Diavola", prezzo:"8.50€"},
-    {nome:"Capricciosa", prezzo:"9.00€"},
-    {nome:"Quattro Formaggi", prezzo:"9.50€"},
-    {nome:"Vegetariana", prezzo:"8.00€"},
-    {nome:"Viennese", prezzo:"8.50"},
-    {nome:"Marinara", prezzo:"6.50"},
-    {nome:"Bufalina", prezzo:"7.50"}
+    {nome:"Margherita", prezzo:"7.00€", ingredienti:"Pomodoro, Mozzarella, Basilico"},
+    {nome:"Diavola", prezzo:"8.50€", ingredienti:"Pomodoro, Mozzarella, Salame piccante"},
+    {nome:"Capricciosa", prezzo:"9.00€", ingredienti:"Pomodoro, Mozzarella, Prosciutto, Funghi, Olive"},
+    {nome:"Quattro Formaggi", prezzo:"9.50€", ingredienti:"Mozzarella, Gorgonzola, Fontina, Parmigiano"},
+    {nome:"Vegetariana", prezzo:"8.00€", ingredienti:"Pomodoro, Mozzarella, Verdure miste"},
+    {nome:"Viennese", prezzo:"8.50€", ingredienti:"Pomodoro, Mozzarella, Würstel"},
+    {nome:"Marinara", prezzo:"6.50€", ingredienti:"Pomodoro, Aglio, Origano"},
+    {nome:"Bufalina", prezzo:"7.50€", ingredienti:"Pomodoro, Mozzarella di Bufala, Basilico"}
   ]}
 ];
 
 const container = document.getElementById("menu");
-menuData.forEach(sezione=>{
-  sezione.items.forEach(item=>{
+
+menuData.forEach(sezione => {
+  sezione.items.forEach(item => {
     const card = document.createElement("div");
     card.className = "pizza-card";
+
     const imageURL = img[item.nome] || "";
     card.innerHTML = `
       <img src="${imageURL}" alt="${item.nome}">
       <div class="pizza-info">
         <h3>${item.nome}</h3>
+        <div class="stars" data-rating="4">★★★★☆</div>
         <p>Prezzo: <span class="price">${item.prezzo}</span></p>
-        <button class="add-btn" onclick="addToCart('${item.nome}','${item.prezzo}')">Aggiungi 🛒</button>
+        <button class="add-btn" onclick="addToCart('${item.nome}','${item.prezzo}'); event.stopPropagation();">Aggiungi 🛒</button>
+        <button class="info-btn" onclick="showInfo('${item.nome}', '${item.ingredienti}'); event.stopPropagation();">ℹ️ Info</button>
       </div>
     `;
     container.appendChild(card);
   });
 });
+
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("stars")) {
+    let rating = e.target.getAttribute("data-rating");
+    rating = (Number(rating) % 5) + 1;
+    e.target.setAttribute("data-rating", rating);
+    e.target.textContent = "★★★★★".slice(0, rating) + "☆☆☆☆☆".slice(0, 5-rating);
+  }
+});
+
+function showInfo(nome, ingredienti) {
+  const modal = document.createElement("div");
+  modal.className = "info-modal";
+  modal.innerHTML = `
+    <div class="info-box">
+      <h2>${nome}</h2>
+      <p><strong>Ingredienti:</strong> ${ingredienti}</p>
+      <button onclick="this.parentElement.parentElement.remove()" class="close-btn">Chiudi</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+}
 </script>
 
 </body>
