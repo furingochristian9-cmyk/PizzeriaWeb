@@ -1,4 +1,3 @@
-/* ===== GENERALE ===== */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -6,8 +5,6 @@ body {
   background: url("img/sfondo.jpeg") center/cover fixed no-repeat;
   color: #333;
 }
-
-/* ===== HEADER ===== */
 header {
   background: #d62828;
   color: white;
@@ -40,8 +37,6 @@ nav a.active {
   background: #f4a261;
   color: white;
 }
-
-/* ===== HERO ===== */
 .hero {
   height: 70vh;
   margin: 1rem;
@@ -102,7 +97,6 @@ nav a.active {
   background: #d9873b;
 }
 
-/* ===== GRIGLIA PIZZE ===== */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -154,7 +148,6 @@ nav a.active {
   color: #d62828;
 }
 
-/* ===== POPUP (ordinazione) ===== */
 .popup {
   position: fixed;
   top: 0;
@@ -196,7 +189,6 @@ nav a.active {
   cursor: pointer;
 }
 
-/* ===== CARRELLO ===== */
 .cart-summary {
   position: fixed;
   bottom: 22px;
@@ -216,7 +208,6 @@ nav a.active {
   transform: scale(1.08);
 }
 
-/* ===== CONTATTI ===== */
 .contact {
   max-width: 650px;
   margin: 3rem auto;
@@ -232,7 +223,6 @@ nav a.active {
   margin-bottom: 1rem;
 }
 
-/* ===== FOOTER ===== */
 footer {
   background: #d62828;
   color: white;
@@ -251,7 +241,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero-content h2 {
     font-size: 2rem;

@@ -5,16 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dolci 🍰 | Pizzeria da Ciccio</title>
 
-<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="cart.css">
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- HEADER -->
+
 <header>
   <h1>Pizzeria da Ciccio 🍕 - Dolci</h1>
   <nav>
@@ -27,7 +25,6 @@
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-overlay">
     <div class="hero-content">
@@ -37,10 +34,8 @@
   </div>
 </section>
 
-<!-- MENU DOLCI -->
 <section class="menu-grid" id="menu"></section>
 
-<!-- CARRELLO -->
 <div id="cart">
   <h3>🛒 Il tuo carrello</h3>
   <div id="cart-items"></div>
@@ -48,7 +43,6 @@
   <button id="confirm-btn" onclick="confirmOrder()">Conferma Ordine</button>
 </div>
 
-<!-- SCRIPT -->
 <script src="script.js"></script>
 
 <script>
@@ -62,8 +56,8 @@ const img = {
 const menuData = [
   { categoria: "Dolci", items: [
     {nome:"Tiramisù", prezzo:"4.00€", ingredienti:"Mascarpone, Savoiardi, Caffè, Cacao"},
-    {nome:"Babà", prezzo:"3.50€", ingredienti:"Impasto dolce, Rum"},
-    {nome:"Panna Cotta", prezzo:"3.00€", ingredienti:"Panna, Zucchero, Vaniglia"},
+    {nome:"Babà", prezzo:"3.50€", ingredienti:"Impasto dolce, Rum, Fragole"},
+    {nome:"Panna Cotta", prezzo:"3.00€", ingredienti:"Panna, Zucchero, Vaniglia, Amarena"},
     {nome:"Gelato Artigianale", prezzo:"3.00€", ingredienti:"Latte, Zucchero, Varie creme"}
   ]}
 ];
