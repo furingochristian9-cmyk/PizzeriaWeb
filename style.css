@@ -306,3 +306,22 @@ footer a:hover {
   margin-top: 15px;
 }
 
+.relazione-link {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ffffffa8;
+  padding: 3px 7px;      
+  border-radius: 6px;
+  font-size: 12px;      
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+  backdrop-filter: blur(4px);
+  transition: 0.2s;
+}
+
+.relazione-link:hover {
+  background: white;
+  transform: scale(1.05);
+}
