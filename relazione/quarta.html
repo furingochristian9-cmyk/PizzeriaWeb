@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metodologie di lavoro</title>
+
+<style>
+    body {
+        background: #f2f2f7;
+        font-family: "Merriweather", serif;
+        margin: 0;
+        padding: 30px 20px;
+        color: #1d1d1f;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-left: 6px solid #1b3a6b;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+
+    h1 {
+        margin-top: 0;
+        color: #1b3a6b;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+        color: #1b3a6b;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Metodologia di lavoro</h1>
+	<p><h1> Introduzione </h1></p>
+	<p> Il progetto analizzato descrive il processo completo di sviluppo collaborativo di un sito web per una pizzeria, utilizzando Git e GitHub come strumenti di controllo di versione e di cooperazione tra più sviluppatori. Il lavoro mostra come organizzare un gruppo, gestire un repository remoto, sincronizzare il codice e controllare le modifiche in modo strutturato e professionale.</p>
+	<p><h1>Creazione del Repository da remoto</h1></p>
+	<p>Il processo inizia con il Project Manager (PM), che crea un nuovo repository pubblico su GitHub tramite l’opzione New. Viene aggiunto un file README.md, che viene poi modificato per includere le istruzioni del progetto:
+
+sviluppatore A,
+
+sviluppatore B,
+
+sviluppatore C.
+
+Il PM invita quindi i membri del gruppo, assegnando loro l’accesso al repository attraverso la sezione Settings > Collaborators.</p>
+<p><h1> Inizializzazione</h1></p>
+<p> Il PM crea poi una cartella locale e la “inizializza” come repository Git con l’interfaccia Git GUI. Imposta le proprie credenziali e collega il repository locale a quello remoto tramite git remote add.
+Successivamente effettua il primo allineamento scaricando il file README.md con git pull origin main.
+
+Dopo aver aggiunto i file del template del sito web (in particolare index.html), il PM esegue:
+
+git status, add, commit
+
+git push per inviare tutto sul repository remoto
+
+Questo rappresenta la prima versione ufficiale del progetto.</p>
+<p><h1> Configurazione degli svilupparoti</h1></p>
+<p>Ogni sviluppatore crea la propria cartella locale e la inizializza con git init. Successivamente collega il proprio repository locale al repository remoto tramite:
+
+git remote add origin <URL>
+git pull origin main
+
+
+In questo modo ottiene una copia aggiornata del lavoro del PM. </p>
+<p><h1>Creazione dei Branch di Lavoro </p></h1>
+<p>Secondo la seconda regola del GitHub Flow, ogni sviluppatore deve lavorare su un branch personale e descrittivo:
+
+menuPizza
+
+menuDolci
+
+menuBibite
+
+Il branch isola il lavoro e impedisce conflitti con il codice principale. </p>
+<p><h1>Sviluppo delle funzionalità</p></h1>
+<p> Ogni sviluppatore aggiunge un elemento nel proprio rispettivo menù modificando index.html e inserendo eventuali immagini nella cartella /img.
+Le operazioni principali sono:
+git add -A
+git commit -m "Aggiunto item menù"
+git push origin (nome-branch)
+Gli altri sviluppatori compiono la stessa procedura nei propri branch.</p>
+ <p><h1> Pull Request e Revisione del PM </h1></p>
+<p>La terza regola del GitHub Flow richiede che ogni modifica venga “pushata” continuamente sul proprio branch. Per integrare il lavoro nel main, gli sviluppatori aprono una pull request.
+Il PM:analizza le pull request
+controlla le modifiche apportate
+può approvare o richiedere rettifiche
+può inserire commenti direttamente sui file
+Se necessario, lo sviluppatore aggiorna il branch ed effettua un ulteriore push. </p>
+ <p><h1> Gestione dei conflitti</h1></p>
+ <p> In caso di modifiche sovrapposte, GitHub segnala dei conflitti.
+Il PM li risolve manualmente confrontando le versioni. Una volta corretto il file, procede con:
+Mark as resolved
+Merge pull request
+Il lavoro viene così integrato nella versione pubblicata. </p>
+ <p><h1> Aggiornamento dei Repository Locali</h1></p>
+ <p>Dopo ogni merge, gli sviluppatori devono aggiornare le loro copie tramite:
+git pull origin main
+in modo da poter continuare a lavorare su una versione coerente del progetto. </p>
+ <p><h1> Conclusioni</h1></p>
+ <p>La trattazione dimostra come Git e GitHub siano strumenti essenziali nello sviluppo moderno: permettono di controllare l’evoluzione del progetto, tracciare ogni modifica, collaborare in sicurezza e gestire conflitti in modo efficace. Il sistema di versionamento semplifica lo sviluppo condiviso, garantendo ordine, trasparenza e professionalità. </p>
+
+    <a href="relazione2.html">← Torna alla pagina principale</a>
+</div>
+
+</body>
+</html>

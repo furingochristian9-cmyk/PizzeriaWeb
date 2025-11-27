@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relazione</title>
+
+<style>
+    :root {
+        --primary: #1b3a6b;
+        --secondary: #f2f2f7;
+        --card-bg: #ffffff;
+        --text: #1d1d1f;
+        --text-muted: #555;
+        --radius: 12px;
+        --shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+
+    body {
+        margin: 0;
+        background: var(--secondary);
+        font-family: "Merriweather", serif;
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    .header {
+        background: var(--primary);
+        color: white;
+        padding: 55px 20px;
+        text-align: center;
+        border-bottom: 6px solid #102544;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 2.6rem;
+    }
+
+    .header h2 {
+        margin-top: 12px;
+        font-size: 1.3rem;
+        font-weight: 300;
+        opacity: 0.9;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1250px;
+        margin: 45px auto;
+        display: grid;
+        gap: 28px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    /* CARD CLICCABILE COME LINK */
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .card {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        padding: 26px;
+        box-shadow: var(--shadow);
+        border-left: 5px solid var(--primary);
+        transition: 0.25s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+        cursor: pointer;
+    }
+
+    .card h3 {
+        margin-top: 0;
+        color: var(--primary);
+        font-size: 1.4rem;
+        margin-bottom: 14px;
+    }
+
+    .footer {
+        text-align: center;
+        padding: 40px 0 25px;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+    }
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>Pizzeria da Ciccio</h1>
+    <h2>Relazione del lavoro svolto in gruppo</h2>
+</div>
+
+<div class="container">
+
+    <a class="card-link" href="seconda pagina.html">
+        <div class="card">
+            <h3> Chi siamo?</h3>
+            <p>Noi siamo Lavinia, Christian e Gabriele e insieme abbiamo ideato il menù della pizzeria "Pizzeria da Ciccio"</p>
+        </div>
+    </a>
+
+    <a class="card-link" href="terza pagina.html">
+        <div class="card">
+            <h3>Cosa abbiamo creato?</h3>
+            <p> Abbiamo realizzato insieme il menù della pizzeria,dividendolo in 3 sezioni:pizze, dolci e bevande.Ogni mebro del gruppo aveva il compito di creare una determinata sezione.  </p>
+        </div>
+    </a>
+
+    <a class="card-link" href="quarta.html">
+        <div class="card">
+            <h3>Metodologia di Lavoro</h3>
+            <p>Approccio operativo, fasi di lavoro, strumenti e organizzazione interna.</p>
+        </div>
+    </a>
+
+    <a class="card-link" href="quinta.html">
+        <div class="card">
+            <h3>Risultati Ottenuti</h3>
+            <p>Il risultato ottenuto da questa collaborazione e obiettivi che abbiamo raggiunto</p>
+        </div>
+    </a>
+
+    <a class="card-link" href="sesta.html">
+        <div class="card">
+            <h3>Conclusioni</h3>
+            <p>Considerazioni finali e prospettive di ampliamento.</p>
+        </div>
+    </a>
+
+</div>
+
+<div class="footer">
+    Relazione realizzata dal Gruppo – Anno 2025
+</div>
+
+</body>
+</html>
